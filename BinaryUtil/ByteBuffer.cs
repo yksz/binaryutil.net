@@ -31,6 +31,15 @@ namespace BinaryUtil
             _shouldConvertEndian = (ByteOrder.NativeOrder != order);
         }
 
+        public byte Get()
+        {
+            const int byteSize = 1;
+            CheckOutOfRange(byteSize);
+            var value = _buf[_offset];
+            _offset += byteSize;
+            return value;
+        }
+
         public void Get(ref byte[] b)
         {
             int byteSize = b.Length;
@@ -99,6 +108,14 @@ namespace BinaryUtil
             var value = toType(_buf, _offset);
             _offset += byteSize;
             return value;
+        }
+
+        public void Put(byte b)
+        {
+            const int byteSize = 1;
+            CheckOutOfRange(byteSize);
+            _buf[_offset] = b;
+            _offset += byteSize;
         }
 
         public void Put(byte[] b)
