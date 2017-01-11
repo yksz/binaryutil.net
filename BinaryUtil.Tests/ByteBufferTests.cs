@@ -15,16 +15,24 @@ namespace BinaryUtil.Tests
         public void GetInt32Test_LittleEndian()
         {
             var bytes = new byte[] { 0x01, 0x00, 0x00, 0x00 };
+            var copy = new byte[bytes.Length];
+            Array.Copy(bytes, copy, bytes.Length);
+
             var bb = new ByteBuffer(bytes, ByteOrder.LittleEndian);
             Assert.AreEqual(1, bb.GetInt32());
+            CollectionAssert.AreEqual(copy, bytes);
         }
 
         [TestMethod()]
         public void GetInt32Test_BigEndian()
         {
             var bytes = new byte[] { 0x00, 0x00, 0x00, 0x01 };
+            var copy = new byte[bytes.Length];
+            Array.Copy(bytes, copy, bytes.Length);
+
             var bb = new ByteBuffer(bytes, ByteOrder.BigEndian);
             Assert.AreEqual(1, bb.GetInt32());
+            CollectionAssert.AreEqual(copy, bytes);
         }
 
         [TestMethod()]
@@ -42,6 +50,7 @@ namespace BinaryUtil.Tests
         {
             var bb = new ByteBuffer(4, ByteOrder.LittleEndian);
             bb.PutInt32(1);
+
             Assert.AreEqual(0x01, bb.Buffer[0]);
             Assert.AreEqual(0x00, bb.Buffer[1]);
             Assert.AreEqual(0x00, bb.Buffer[2]);
@@ -53,6 +62,7 @@ namespace BinaryUtil.Tests
         {
             var bb = new ByteBuffer(4, ByteOrder.BigEndian);
             bb.PutInt32(1);
+
             Assert.AreEqual(0x00, bb.Buffer[0]);
             Assert.AreEqual(0x00, bb.Buffer[1]);
             Assert.AreEqual(0x00, bb.Buffer[2]);
