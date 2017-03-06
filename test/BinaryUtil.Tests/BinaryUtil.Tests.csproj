@@ -56,8 +56,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BinaryUtil\BinaryUtil.csproj">
-      <Project>{02A34C38-C917-402B-AC52-2FFDD5E55A98}</Project>
+    <ProjectReference Include="..\..\src\BinaryUtil\BinaryUtil.csproj">
+      <Project>{02a34c38-c917-402b-ac52-2ffdd5e55a98}</Project>
       <Name>BinaryUtil</Name>
     </ProjectReference>
   </ItemGroup>

@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryUtil", "BinaryUtil\BinaryUtil.csproj", "{02A34C38-C917-402B-AC52-2FFDD5E55A98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryUtil.Tests", "BinaryUtil.Tests\BinaryUtil.Tests.csproj", "{07C0B3F2-3C91-47D1-A148-A9CB951C63C8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{02A34C38-C917-402B-AC52-2FFDD5E55A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02A34C38-C917-402B-AC52-2FFDD5E55A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02A34C38-C917-402B-AC52-2FFDD5E55A98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07C0B3F2-3C91-47D1-A148-A9CB951C63C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07C0B3F2-3C91-47D1-A148-A9CB951C63C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07C0B3F2-3C91-47D1-A148-A9CB951C63C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07C0B3F2-3C91-47D1-A148-A9CB951C63C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
