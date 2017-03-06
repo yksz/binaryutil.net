@@ -9,25 +9,32 @@ namespace BinaryUtil
     public class ByteBuffer
     {
         private readonly byte[] _buf;
-        private readonly ByteOrder _order;
+        private readonly bool _shouldConvertEndian;
         private int _offset;
-        private bool _shouldConvertEndian;
 
         public byte[] Buffer { get { return _buf; } }
 
         public ByteBuffer(int capacity, ByteOrder order) : this(order)
         {
+            if (capacity < 1)
+                throw new ArgumentException("capacity must not be less than 1");
+
             _buf = new byte[capacity];
         }
 
         public ByteBuffer(byte[] buf, ByteOrder order) : this(order)
         {
+            if (buf == null)
+                throw new ArgumentNullException("buf must not be null");
+
             _buf = (byte[])buf.Clone();
         }
 
         private ByteBuffer(ByteOrder order)
         {
-            _order = order;
+            if (order == null)
+                throw new ArgumentNullException("order must not be null");
+
             _shouldConvertEndian = (ByteOrder.NativeOrder != order);
         }
 
