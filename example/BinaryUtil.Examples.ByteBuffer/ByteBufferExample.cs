@@ -11,9 +11,9 @@ namespace BinaryUtil.Examples
         public static void Main(string[] args)
         {
             // write
-            ByteBuffer w = new ByteBuffer(32, ByteOrder.BigEndian);
-            string str1 = "abcd";
-            byte[] bytes1 = Encoding.ASCII.GetBytes(str1);
+            var w = new ByteBuffer(32, ByteOrder.BigEndian);
+            var str1 = "abcd";
+            var bytes1 = Encoding.ASCII.GetBytes(str1);
             w.Put(bytes1);
             w.PutBoolean(true);
             w.Put(1);
@@ -24,10 +24,9 @@ namespace BinaryUtil.Examples
             w.PutDouble(6.0);
 
             // read
-            ByteBuffer r = new ByteBuffer(w.Buffer, ByteOrder.BigEndian);
-            byte[] bytes2 = new byte[4];
-            r.Get(ref bytes2);
-            string str2 = Encoding.ASCII.GetString(bytes2);
+            var r = new ByteBuffer(w.Buffer, ByteOrder.BigEndian);
+            var bytes2 = r.Get(bytes1.Length);
+            var str2 = Encoding.ASCII.GetString(bytes2);
             Console.WriteLine(str2);           // => "abcd"
             Console.WriteLine(r.GetBoolean()); // => True
             Console.WriteLine(r.Get());        // => 1

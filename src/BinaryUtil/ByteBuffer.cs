@@ -47,12 +47,13 @@ namespace BinaryUtil
             return value;
         }
 
-        public void Get(ref byte[] b)
+        public byte[] Get(int byteSize)
         {
-            int byteSize = b.Length;
+            var b = new byte[byteSize];
             CheckOutOfRange(byteSize);
             Array.Copy(_buf, _offset, b, 0, byteSize);
             _offset += byteSize;
+            return b;
         }
 
         public Boolean GetBoolean()
