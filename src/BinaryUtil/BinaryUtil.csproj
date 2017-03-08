@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EndianBinaryReader.cs" />
+    <Compile Include="EndianBinaryWriter.cs" />
     <Compile Include="ByteBuffer.cs" />
     <Compile Include="ByteOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
