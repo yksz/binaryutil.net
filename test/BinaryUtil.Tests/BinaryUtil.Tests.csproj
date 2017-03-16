@@ -52,7 +52,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="EndianBinaryReaderTest.cs" />
     <Compile Include="ByteBufferTest.cs" />
+    <Compile Include="EndianBinaryWriterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
